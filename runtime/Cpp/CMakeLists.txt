@@ -17,13 +17,7 @@ if(NOT CMAKE_BUILD_TYPE)
        FORCE)
 endif(NOT CMAKE_BUILD_TYPE)
 
-if(NOT WITH_DEMO)
-  message(STATUS "Building without demo. To enable demo build use: -DWITH_DEMO=True")
-  set(WITH_DEMO False CACHE STRING
-    "Chose to build with or without demo executable"
-    FORCE)
-endif(NOT WITH_DEMO)
-
+option(WITH_DEMO "Chose to build with or without demo executable" OFF)
 option(WITH_LIBCXX "Building with clang++ and libc++(in Linux). To enable with: -DWITH_LIBCXX=On" Off)
 option(WITH_STATIC_CRT "(Visual C++) Enable to statically link CRT, which avoids requiring users to install the redistribution package.
  To disable with: -DWITH_STATIC_CRT=Off" On)
